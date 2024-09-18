@@ -15,6 +15,14 @@ class Pbot:
  def bestmove(self):
    return self.depth(None, 1)
  
- def evalFunction(self):
+ def evaluationFunction(self):
    compt = 0
-   
+   for i in range(64):
+     compt+=self.squarenumbers(ch.SQUARES[i])
+     compt += self.mateOppurtunity() + self.opening() + 10*br.board()
+
+   def enpassant(self):
+     compt = 0
+     for i in range(4,5):
+       compt+=self.squarenumbers(ch.SQUARES[i])
+       compt += self.enpassantposition() + self.middlegame.opening.endgame() + 10*br.board() 
