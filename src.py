@@ -12,7 +12,7 @@ class Pbot:
     self.capture=capture
     self.check=check
 
- def bestmove(self):
+ def corretpositionalmove(self):
    return self.depth(None, 1)
  
  def evaluationFunction(self):
